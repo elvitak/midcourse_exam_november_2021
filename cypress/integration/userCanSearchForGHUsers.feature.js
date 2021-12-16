@@ -10,4 +10,10 @@ describe("User that visits the website", () => {
   it("is expected to see search input field", () => {
     cy.get("[data-cy=search_input]").should("be.visible");
   });
+
+  it("is expected to see 3 search results after typing barack", () => {
+    cy.get("[data-cy=search_input]").type("barack");
+    cy.get("[data-cy=search_btn]").click();
+    cy.get("[data-cy=search_results]").children().should("have.length", 3);
+  });
 });
