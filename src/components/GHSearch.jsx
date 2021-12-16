@@ -16,7 +16,7 @@ const GHSearch = () => {
 
   const userList = users.map((user) => {
     return (
-      <li id={user.id}>
+      <li key={user.id}>
         <DisplayUsers user={user} />
       </li>
     );

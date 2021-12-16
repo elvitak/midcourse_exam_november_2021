@@ -15,5 +15,6 @@ describe("User that visits the website", () => {
     cy.get("[data-cy=search_input]").type("barack");
     cy.get("[data-cy=search_btn]").click();
     cy.get("[data-cy=search_results]").children().should("have.length", 3);
+    cy.get("[data-cy=search_results]").first().should("contain", "barack");
   });
 });
