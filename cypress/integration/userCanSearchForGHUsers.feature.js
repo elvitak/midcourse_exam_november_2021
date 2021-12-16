@@ -16,5 +16,9 @@ describe("User that visits the website", () => {
     cy.get("[data-cy=search_btn]").click();
     cy.get("[data-cy=search_results]").children().should("have.length", 3);
     cy.get("[data-cy=search_results]").first().should("contain", "barack");
+    cy.get(".image").should("exist");
+    cy.get("[data-cy=link_to_profile]")
+      .first()
+      .should("contain", "Link to profile");
   });
 });
