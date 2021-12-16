@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 describe("User that visits the website", () => {
-  before(() => {
+  beforeEach(() => {
     cy.intercept("GET", "https://api.github.com/search/users**", {
       fixture: "search_response.json",
     });
